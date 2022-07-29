@@ -1,0 +1,39 @@
+[
+    
+    {
+        "description": "Should display incorrect password and email message",
+        "email": "incorrect@email",
+        "password": "incorrect_password",
+        "expected": "Invalid email or password"
+    },
+
+    {
+        "description": "Should login successfully with customer role",
+        "email": "panh@gmail.com",
+        "password": "123456",
+        "expected": "panh"
+    },
+
+    {
+        "description": "Should login successfully with admin role",
+        "email": "admin@example.com",
+        "password": "123456",
+        "expected": "Admin User"
+    },
+
+    {
+        "description": "Should display incorrect email message",
+        "email": "dummyEmail@example.com",
+        "password": "123456",
+        "expected": "Invalid email or password"
+    },
+
+    {
+        "description": "Should display incorrect password message",
+        "email": "john@example.com",
+        "password": "incorrect_password",
+        "expected": "Invalid email or password"
+    }
+
+    
+]
