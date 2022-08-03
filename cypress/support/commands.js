@@ -25,8 +25,28 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // import User from '../../pages/user'
 const User = require('../pages/user')
+const Product = require('../pages/product')
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 Cypress.Commands.add('login', (email, password) => {
     cy.visit(Cypress.env('login_url'))
     User.typeEmail(email).typePassword(password).clickLogin()
+    cy.wait(5000)
+})
+
+Cypress.Commands.add('addToCart', (index) => {
+    Product.clickCardImg(index)
+    cy.wait(1000)
+    Product.clickAddToCartBtn()
+
+})
+
+Cypress.Commands.add('addRandomProductToCart', () => {
+    cy.visit('/')
+    Product.elements.cardImg().then(item => {
+        cy.addToCart(getRandomInt(item.length))
+    })
 })

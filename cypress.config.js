@@ -7,6 +7,10 @@ export default defineConfig({
     },
     env: {
       login_url: '/login',
+      cart_url: '/cart',
+      shipping_url: '/shipping',
+      payment_url: '/payment',
+      placeorder_url: '/placeorder',
       cus_email: 'panh@gmail.com',
       cus_pass: '123456',
       ad_email: 'admin@example.com',
