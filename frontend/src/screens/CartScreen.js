@@ -39,8 +39,8 @@ const CartScreen = ({ match, location, history }) => {
           </Message>
         ) : (
           <ListGroup variant='flush'>
-            {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
+            {cartItems.map((item, index) => (
+              <ListGroup.Item key={item.product} id={index}>
                 <Row>
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
@@ -49,10 +49,11 @@ const CartScreen = ({ match, location, history }) => {
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
-                  <Col md={2}>
+                  <Col md={2} id={index}>
                     <Form.Control
                       as='select'
                       value={item.qty}
+                      id={index}
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
