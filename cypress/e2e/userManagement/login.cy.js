@@ -1,7 +1,7 @@
 import User from '../../pages/user'
 import Header from '../../pages/header'
 
-const testLogin = require('../../fixtures/data-driven/user/accountLogin.json');
+const testLogin = require('../../fixtures/accountLogin.json');
 
 describe('Test Login Feature', () => {
 
@@ -17,6 +17,11 @@ describe('Test Login Feature', () => {
                 User.elements.errorMsg().should('have.text', testData.expected)
             }
         })
+    })
+
+    it('Verify that all field in shipping form are required', () => {
+        User.elements.emailInput().should('have.attr', 'required')
+        User.elements.passwordInput().should('have.attr', 'required')
     })
 
     it('Verify when the user is logged in, the login button on the header disappears', () => {

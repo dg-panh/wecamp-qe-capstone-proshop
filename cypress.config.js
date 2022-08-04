@@ -7,6 +7,7 @@ export default defineConfig({
     },
     env: {
       login_url: '/login',
+      signup_url: '/register',
       cart_url: '/cart',
       shipping_url: '/shipping',
       payment_url: '/payment',

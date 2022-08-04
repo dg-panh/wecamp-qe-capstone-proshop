@@ -4,7 +4,9 @@ class Header {
         username: () => cy.get('#username'),
         loginBtn: () => cy.get('a[data-rb-event-key="/login"]'),
         searchInput: () => cy.get('input[name="q"]'),
-        searchBtn: () => cy.get('button[type="submit"]').filter(':contains("Search")')
+        searchBtn: () => cy.get('button[type="submit"]').filter(':contains("Search")'),
+        logoutDropdown: () => cy.get('.dropdown-item').contains('Logout')
+
     }
 
     typeSearchText(keyword) {
@@ -19,6 +21,13 @@ class Header {
 
     clickSearchBtn() {
         this.elements.searchBtn().click()
+        return this
+    }
+
+    clickLogout() {
+        this.elements.username().click()
+        this.elements.logoutDropdown().click()
+        cy.wait(1000)
         return this
     }
 }

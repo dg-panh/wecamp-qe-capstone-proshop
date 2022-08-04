@@ -10,7 +10,7 @@ describe('Add to cart', () => {
         cy.visit('/')
     })
 
-    it.only('Verify that the product will appear when the user add product to the cart', () => {
+    it('Verify that the product will appear when the user add product to the cart', () => {
         Product.elements.cardTitle().then(item => {
             const index = getRandomInt(item.length)
             const title = item[index].innerText

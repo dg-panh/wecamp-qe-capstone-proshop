@@ -42,7 +42,7 @@ describe('Step by step in checkout process', () => {
         cy.url().should('include', Cypress.env('shipping_url'))
     })
 
-    it.only('Verify that the user cannot access the place order page by typing the URL in the browser when user have not submit the shipping form', () => {
+    it('Verify that the user cannot access the place order page by typing the URL in the browser when user have not submit the shipping form', () => {
         cy.addRandomProductToCart()
         cy.login(Cypress.env('cus_email'), Cypress.env('cus_pass'))
         cy.visit(Cypress.env('placeorder_url'))

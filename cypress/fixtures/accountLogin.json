@@ -1,7 +1,7 @@
 [
     
     {
-        "description": "Should display incorrect password and email message",
+        "description": "Verify that when user input invalid email and password, system will display error message",
         "email": "incorrect@email",
         "password": "incorrect_password",
         "expected": "Invalid email or password"
