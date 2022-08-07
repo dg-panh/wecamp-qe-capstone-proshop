@@ -1,0 +1,27 @@
+{
+    "emailAdmin": "admin@example.com",
+    "emailCustomer": "panh@gmail.com",
+    "createProduct": {
+        "valid": {
+            
+        }
+    },
+    "getProduct": {
+        "wrongID": "62d18d53b066ba594ce41b56",
+        "rightID": "62d18d53b069ba594ce41b56"
+    },
+    "deleteProduct": {
+
+    }, 
+    "updateProduct": {
+        "validValues": {
+            "name": "Test Product",
+            "image": "upload/test",
+            "brand": "Test Brand",
+            "category": "Test Category",
+            "description": "Test Description",
+            "price": 10000,
+            "countInStock": 100
+        }
+    }
+}
